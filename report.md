@@ -272,7 +272,47 @@ This modular design simplifies testing, debugging, and future enhancements.
 - **Key Management and Security:**  By keeping encryption and decryption on the client side, and ensuring that the server only processes encrypted data, we adhere to strict privacy requirements. The secure serialization and transmission of evaluation keys further bolster the system’s security posture.
 
 ---
-## 9. Conclusion
+Below is an updated "Future Improvements" section that combines bullet points with explanatory paragraphs, including a dedicated point on addressing JPEG compression:
+
+---
+
+## 9. Future Improvements
+
+Our current implementation lays a strong foundation for FHE-based invisible watermarking; however, several areas for enhancement have been identified. By addressing these aspects, the system can become more robust, scalable, and adaptable to real-world conditions.
+
+- **Explore Transform-Domain Techniques:**  
+  One promising direction is to investigate watermarking in the transform domain using methods such as DCT, DWT, or DFT. These techniques can offer improved resistance to common image processing operations (e.g., JPEG compression) by embedding watermark information in frequency coefficients rather than in the spatial domain. Transitioning to these methods within an FHE framework may require redesigning the FHE circuit to handle more complex mathematical operations.
+
+- **Implement Error-Correction Mechanisms:**  
+  Enhancing the robustness of the watermark could involve integrating error-correcting codes or redundancy schemes. Such mechanisms would help recover watermark information even when parts of the data are corrupted by noise or aggressive compression. This approach could significantly mitigate the adverse effects observed under lossy conditions.
+
+- **Optimize FHE Circuit Performance:**  
+  Given that FHE operations are computationally intensive, further optimizations to the FHE circuit are essential. Potential strategies include:
+  - Reducing computational overhead through algorithmic improvements.
+  - Leveraging hardware acceleration and parallel processing techniques.
+  These enhancements could allow the processing of higher-resolution images while maintaining acceptable performance levels.
+
+- **Enhance Key Management and Serialization:**  
+  The security of the system can be bolstered by refining key management and serialization processes. Improvements in this area would not only streamline the secure transmission of evaluation keys between the client and server but also reduce the risk of potential vulnerabilities during key handling.
+
+- **Address JPEG Compression Challenges:**  
+  JPEG compression introduces significant challenges due to its lossy nature, which can disrupt the least significant bits carrying the watermark. Future work will focus on developing strategies to mitigate the impact of JPEG compression. Possible solutions include:
+  - Incorporating pre- or post-processing algorithms specifically designed to counteract JPEG-induced artifacts.
+  - Utilizing adaptive watermarking methods that can adjust embedding parameters based on anticipated JPEG compression.
+  - Investigating hybrid approaches that combine spatial and frequency domain techniques to enhance robustness against JPEG artifacts.
+
+- **Conduct Extensive Real-World Testing:**  
+  To ensure that the watermarking system performs well under a variety of conditions, it is critical to expand the test suite. Future testing should:
+  - Include diverse image formats and a range of compression methods, especially aggressive JPEG compression.
+  - Utilize real-world datasets to evaluate the system's robustness and identify areas for iterative refinement.
+
+- **Develop Adaptive Watermarking Strategies:**  
+  Future work may also focus on creating adaptive watermarking schemes that dynamically adjust embedding parameters based on the content of the image and anticipated processing steps. Such adaptability could ensure that the watermark remains robust even under unpredictable real-world transformations.
+
+By focusing on these improvements, the system can evolve to address its current limitations and better meet the demands of secure, real-world digital watermarking.
+
+---
+## 10. Conclusion
 
 This report has provided an exhaustive examination of our FHE-based invisible watermarking system. From the rationale behind choosing the LSB method to a detailed walkthrough of code-level operations—including encryption, FHE processing, and adaptive compression evaluation—we have explored every facet of the design. The inclusion of real experimental results (as captured in the JSON block) demonstrates that, under ideal conditions (scale 1.0 with lossless compression), our system achieves perfect watermark recovery (100% bit and character accuracy, 0 BER). However, the variability observed with RAW upscaling at scale 2.0 highlights areas for future enhancement.
 
