@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ```
 and proceed to run 
 ```bash
-python watermarking.py
+python watermark.py
 ```
 
 If you're on NixOS, a `shell.nix` file included. 
