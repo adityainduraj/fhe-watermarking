@@ -272,9 +272,6 @@ This modular design simplifies testing, debugging, and future enhancements.
 - **Key Management and Security:**  By keeping encryption and decryption on the client side, and ensuring that the server only processes encrypted data, we adhere to strict privacy requirements. The secure serialization and transmission of evaluation keys further bolster the system’s security posture.
 
 ---
-Below is an updated "Future Improvements" section that combines bullet points with explanatory paragraphs, including a dedicated point on addressing JPEG compression:
-
----
 
 ## 9. Future Improvements
 
@@ -308,9 +305,7 @@ Our current implementation lays a strong foundation for FHE-based invisible wate
 
 - **Develop Adaptive Watermarking Strategies:**  
   Future work may also focus on creating adaptive watermarking schemes that dynamically adjust embedding parameters based on the content of the image and anticipated processing steps. Such adaptability could ensure that the watermark remains robust even under unpredictable real-world transformations.
-
-By focusing on these improvements, the system can evolve to address its current limitations and better meet the demands of secure, real-world digital watermarking.
-
+  
 ---
 ## 10. Conclusion
 
