@@ -227,6 +227,9 @@ The following JSON block summarizes one experimental run of our adaptive evaluat
     - **Interpolation Effects:** Upscaling with nearest-neighbor interpolation typically preserves discrete pixel values. However, when no compression is applied (RAW), even slight inconsistencies due to scaling can affect the LSBs, causing errors.
     - **Compression Algorithms:** Lossless compression methods like PNG and lossless WEBP appear to provide an implicit “correction” by standardizing pixel values during encoding/decoding, thus preserving the watermark bits more reliably.
 
+### 6.4 JPEG Compression
+While our current implementation primarily focuses on lossless compression methods (e.g., PNG and lossless WEBP) to preserve watermark integrity, JPEG compression poses a significant challenge. JPEG’s lossy nature—introducing quantization and artifacts—can disturb the least significant bits that carry the watermark, thereby degrading its accuracy. Preliminary experiments suggest that applying JPEG compression results in a marked drop in bit accuracy, necessitating the exploration of additional error-correction strategies or more robust watermarking techniques to mitigate the loss introduced by JPEG compression.
+
 This comprehensive testing illustrates both the strengths and limitations of the current approach. While lossless compression maintains the integrity of the watermark even after upscaling, the RAW method suffers from inaccuracies at higher scales—a factor that will inform future improvements in robust watermark embedding.
 
 ---
